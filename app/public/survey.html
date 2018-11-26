@@ -67,6 +67,43 @@
   for (var selector in config) {
     $(selector).chosen(config[selector]);
   }
+
+  // Handles form submission
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+
+    function validateForm() {
+      var isValid = true;
+      $(".form-control").each(function () {
+        if ($(this).val() === "") {
+          isValid = false;
+        }
+      });
+
+      $(".chosen-select").each(function () {
+
+        if ($(this).val() === "") {
+          isValid = false;
+        }
+      });
+      return isValid;
+    }
+    
+    // All required fields must be filled
+    if (validateForm()) {
+      var userData = {
+        name: $("#name").val(),
+        photo: $("#photo").val(),
+        scores: [
+          $("#q1").val(),
+      ]
+      };
+
+      // AJAX Post call
+
+      // Show results
+    }
+  });
 </script>
 
 </body>
