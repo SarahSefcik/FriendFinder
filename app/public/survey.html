@@ -30,34 +30,34 @@
     you will be sorted in to one of the animal personality types and you will be paired with a fellow friend.</h5>
     <br>
     <br>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='beaver' value='1' autocomplete='off'> "how does that work?"
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> the leader
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "where's the party?"
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> competitive
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "creative"
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='golden' value='4' autocomplete='off'> "let's keep the peace!"
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> hard worker
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> enjoys change
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='golden' value='4' autocomplete='off'> relaxed
     </label>
-    <label class='btn btn-primary'>
+    <label class='btn btn-sm btn-primary'>
       <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "let's do it the fun way!"
     </label>
     
@@ -65,9 +65,7 @@
     <br>
     <br>
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-      <i id="doneButton" aria-hidden="true"></i> Submit
-    </button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" value="Get Button Value">Submit</button>
     <hr>
     <footer class="footer">
       <div class="container">
@@ -80,36 +78,62 @@
 
 <!-- JS -->
 <script type="text/javascript">
-  var config = {
-    ".chosen-select": {},
-    ".chosen-select-deselect": {
-      allow_single_deselect: true
-    },
-    ".chosen-select-no-single": {
-      disable_search_threshold: 10
-    },
-    ".chosen-select-no-results": {
-      no_results_text: "Oops, nothing found!"
-    },
-    ".chosen-select-width": {
-      width: "95%"
-    }
-  };
+// $(document).ready(function () {
+//   $(#submit).click(function() {
+//     getValueByClass();
+//   });
+// });
 
-  for (var selector in config) {
-    $(selector).chosen(config[selector]);
+function getValueByClass() {
+  var chkArray = [];
+
+  $(".chk:checked").each(function() {
+    chkArray.push($(this).val());
+  });
+
+  var selected;
+  selected = chkArray.join(',');
+
+  if(selected.length > 0){
+    alert("You have selected " + selected);
+  }else{
+    alert("Please at least select one of the options")
   }
+};
+
+<!-- 
+
+  // var config = {
+  //   ".chosen-select": {},
+  //   ".chosen-select-deselect": {
+  //     allow_single_deselect: true
+  //   },
+  //   ".chosen-select-no-single": {
+  //     disable_search_threshold: 10
+  //   },
+  //   ".chosen-select-no-results": {
+  //     no_results_text: "Oops, nothing found!"
+  //   },
+  //   ".chosen-select-width": {
+  //     width: "95%"
+  //   }
+  // };
+
+  // for (var selector in config) {
+  //   $(selector).chosen(config[selector]);
+  // }
 
   // Handles form submission
   $("#submit").on("click", function (event) {
     event.preventDefault();
 
     function validateForm() {
-      var isValid = true;
-      $(".form-control").each(function () {
-        if ($(this).val() === "") {
-          isValid = false;
-        }
+      getValueByClass();
+      // var isValid = true;
+      // $(".form-control").each(function () {
+      //   if ($(this).val() === "") {
+      //     isValid = false;
+      //   }
       });
 
       $(".chosen-select").each(function () {
@@ -135,7 +159,7 @@
 
       // Show results
     }
-  });
+  }); -->
 </script>
 
 </body>
