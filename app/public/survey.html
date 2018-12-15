@@ -8,6 +8,7 @@
 
   <!-- CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -18,23 +19,54 @@
 
   <div class="container">
 
-    <!-- Questions -->
-    <h3><strong>Question 1</strong></h3>
-    <h4>How's your credit card spending?</h4>
-    <select class="chosen-select" id="q1">
-      <option value=""></option>
-      <option value="1">1 (I've never spent a dime on it)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (I've maxed that puppy out)</option>
-    </select>
-
+    <!-- Personality Traits -->
+    <h2>Personality Test</h2>
+    <h5>We’re all blend of different personality types, but we usually have one or two dominant styles. The handiest way of
+    describing them is in terms of four animals: lions, otters, golden retrievers and beavers. Here’s a quick, not very
+    scientific-but-interesting-anyway personality test.
+    <br>
+    <br>
+    There are no right and wrong answers - tick as many of the traits below that best describe you. Once you’re finished,
+    you will be sorted in to one of the animal personality types and you will be paired with a fellow friend.</h5>
+    <br>
+    <br>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='beaver' value='1' autocomplete='off'> "how does that work?"
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> the leader
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "where's the party?"
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> competitive
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "creative"
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='golden' value='4' autocomplete='off'> "let's keep the peace!"
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='lion' value='2' autocomplete='off'> hard worker
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> enjoys change
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='golden' value='4' autocomplete='off'> relaxed
+    </label>
+    <label class='btn btn-primary'>
+      <input type='checkbox' class='chk' id='otter' value='3' autocomplete='off'> "let's do it the fun way!"
+    </label>
+    
+  
     <br>
     <br>
 
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-      <i class="fa fa-check-circle" aria-hidden="true"></i> Submit
+      <i id="doneButton" aria-hidden="true"></i> Submit
     </button>
     <hr>
     <footer class="footer">
